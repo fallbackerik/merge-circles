@@ -1,0 +1,20 @@
+on: [push, workflow_dispatch]
+
+jobs:
+  merge_job:
+    runs-on: ubuntu-latest
+    name: Merge Circles
+    steps:
+      - uses: actions/checkout@v4
+      - name: Transform SVGs
+        id: transform
+        uses: fallbackerik/transform-svg-action@main
+      - name: List the generated files
+        run: echo "The files generated are ${{ steps.transform.outputs.svgs-modified }}"
+      - name: list filesystem
+        run: ls -al output/
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4.3.3
+        with:
+          name: generatedsvgs
+          path: "output/*svg"
