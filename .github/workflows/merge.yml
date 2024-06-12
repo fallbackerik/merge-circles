@@ -1,11 +1,14 @@
 on: [push, workflow_dispatch]
 
 jobs:
-  merge_job:
+  checkout_job:
     runs-on: ubuntu-latest
-    container:
-      volumes:
-        - ./entrypoint.py:/entrypoint.py
+    steps:
+      - uses: actions/checkout@v4
+  merge_job:
+    needs:
+      - checkout_job
+    runs-on: ubuntu-latest
     name: Merge Circles
     steps:
       - uses: actions/checkout@v4
