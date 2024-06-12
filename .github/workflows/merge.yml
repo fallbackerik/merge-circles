@@ -3,6 +3,9 @@ on: [push, workflow_dispatch]
 jobs:
   merge_job:
     runs-on: ubuntu-latest
+    container:
+      volumes:
+        - ./entrypoint.py:/entrypoint.py
     name: Merge Circles
     steps:
       - uses: actions/checkout@v4
