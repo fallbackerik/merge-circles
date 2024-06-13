@@ -2,10 +2,13 @@ import sys
 import os
 import glob
 
-import xml.etree.ElementTree as etree
+from lxml import etree
 
 SVG_NAMESPACE = "https://www.web3.org/2000/svg"
-namespaces = { "svg" : SVG_NAMESPACE }
+namespaces = {
+  "svg" : SVG_NAMESPACE,
+  "ns0" : SVG_NAMESPACE,
+}
 
 for file in glob.glob(sys.argv[2]):
   filebase = os.path.basename(file)
@@ -23,4 +26,4 @@ for file in glob.glob(sys.argv[2]):
   width = int(root.attrib["width"])
   height = int(root.attrib["height"])
 
-  print(root.findall(".//svg:circle", namespaces))
+  print(root.xpath("//svg:circle | //ns0:circle", namespaces))
