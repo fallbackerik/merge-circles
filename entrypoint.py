@@ -26,4 +26,4 @@ for file in glob.glob(sys.argv[2]):
   width = int(root.attrib["width"])
   height = int(root.attrib["height"])
 
-  print(root.xpath("circle"))
+  print(root.xpath("svg"))
