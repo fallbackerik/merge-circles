@@ -40,4 +40,5 @@ etree.SubElement(root, "circle")
 print("generated etree", etree.tostring(root))
 print("...", root.xpath("circle"))
 print(";;;", root.xpath("rect"))
+print("+++", root.xpath('//*[name()="svg"]/*[name()="circle"]/@id'))
 
