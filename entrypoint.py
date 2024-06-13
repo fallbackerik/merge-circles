@@ -33,7 +33,7 @@ namespaces = {
 #  print("...", tree.xpath(".//circle"))
 
 root = etree.Element("root")
-
+root.attrib["xmlns"] = SVG_NAMESPACE
 root.append( etree.Element("child") )
 etree.SubElement(root, "child")
 etree.SubElement(root, "child")
