@@ -39,5 +39,5 @@ etree.SubElement(root, "child")
 etree.SubElement(root, "child")
 
 print("generated etree", etree.tostring(root))
-print("...", root.xpath(".//child"))
+print("...", root.xpath("child"))
 
