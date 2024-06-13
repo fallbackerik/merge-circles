@@ -18,10 +18,10 @@ for file in glob.glob(sys.argv[2]):
   root = tree.getroot()
   print("root", root)
 
-  if not "svg" in root.attrib.get("xmlns", "attrib doesn't exist"):
-    print("setting xmlns, because: ", root.attrib.get("xmlns", "attrib doesn't exist"), root.attrib["xmlns"])
-    root.attrib["xmlns"] = SVG_NAMESPACE
-    tree = etree.ElementTree(root)
+  #if not "svg" in root.attrib.get("xmlns", "attrib doesn't exist"):
+  #  print("setting xmlns, because: ", root.attrib.get("xmlns", "attrib doesn't exist"))
+  #  root.attrib["xmlns"] = SVG_NAMESPACE
+  #  tree = etree.ElementTree(root)
 
   if "width" not in root.attrib and "height" not in root.attrib:
     raise ValueException("expected width and height attributes in svg root element")
