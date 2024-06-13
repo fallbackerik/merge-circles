@@ -14,7 +14,9 @@ for file in glob.glob(sys.argv[2]):
   filebase = os.path.basename(file)
   print("opening", filebase, "...")
   tree = etree.parse(file)
+  print("tree", tree)
   root = tree.getroot()
+  print("root", root)
 
   if not "svg" in root.attrib.get("xmlns", "attrib doesn't exist"):
     print("setting xmlns, because: ", root.attrib.get("xmlns", "attrib doesn't exist"))
@@ -27,4 +29,4 @@ for file in glob.glob(sys.argv[2]):
   width = int(root.attrib["width"])
   height = int(root.attrib["height"])
 
-  print(root.xpath("svg"))
+  print("xpath", root.xpath("svg"))
