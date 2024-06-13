@@ -32,8 +32,7 @@ namespaces = {
 #  print("xpath", tree.xpath("svg"))
 #  print("...", tree.xpath(".//circle"))
 
-root = etree.Element("root")
-root.attrib["xmlns"] = SVG_NAMESPACE
+root = etree.parse("input/example1.svg").getroot()
 root.append( etree.Element("circle") )
 etree.SubElement(root, "circle")
 etree.SubElement(root, "circle")
