@@ -29,4 +29,4 @@ for file in glob.glob(sys.argv[2]):
   width = int(root.attrib["width"])
   height = int(root.attrib["height"])
 
-  print("xpath", root.xpath("svg"))
+  print("xpath", tree.xpath("svg"))
