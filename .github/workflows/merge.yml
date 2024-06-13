@@ -1,13 +1,7 @@
 on: [push, workflow_dispatch]
 
 jobs:
-  checkout_job:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
   merge_job:
-    needs:
-      - checkout_job
     runs-on: ubuntu-latest
     name: Merge Circles
     steps:
