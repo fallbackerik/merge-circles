@@ -32,10 +32,9 @@ namespaces = {
 #  print("xpath", tree.xpath("svg"))
 #  print("...", tree.xpath(".//circle"))
 
-root = etree.parse("input/example1.svg").getroot()
-
-print("generated etree", etree.tostring(root))
-print("...", root.xpath("circle"))
-print(";;;", root.xpath("rect"))
-print("+++", root.xpath('//*[name()="svg"]/*[name()="circle"]'))
+for file in glob.glob(sys.argv[2]):
+  filebase = os.path.basename(file)
+  print("opening", filebase, "...")
+  root = etree.parse(file).getroot()
+  print("circles inside", root.xpath('//*[name()="svg"]/*[name()="circle"]'))
 
