@@ -12,10 +12,6 @@ jobs:
     name: Merge Circles
     steps:
       - uses: actions/checkout@v4
-      - name: list filesystem
-        run: ls -al
-      - name: pwd
-        run: pwd
       - name: Transform SVGs
         id: transform
         uses: fallbackerik/transform-svg-action@main
