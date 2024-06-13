@@ -1,4 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<svg id="canvas" width="500" height="300" xmlns="https://www.w3.org/2000/svg">
-  <rect id="background" width="100%" height="100%" fill="#aa330044" />
-<circle cx="24%" cy="30%" r="11%" fill="red" /><circle cx="70%" cy="39%" r="6%" fill="red" /></svg>
