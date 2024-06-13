@@ -30,4 +30,4 @@ for file in glob.glob(sys.argv[2]):
   height = int(root.attrib["height"])
 
   print("xpath", tree.xpath("svg"))
-  print("...", tree.xpath(".//\{http://www.w3.org/2000/svg\}circle"))
+  print("...", tree.xpath(".//circle"))
