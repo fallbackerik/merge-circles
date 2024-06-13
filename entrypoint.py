@@ -12,6 +12,6 @@ for file in glob.glob(sys.argv[2]):
   tree = etree.parseFile(file)
   root = tree.getroot()
 
-  if not "svg" in root.attrib.get("xmlns", "attrib doesn't exist):
+  if not "svg" in root.attrib.get("xmlns", "attrib doesn't exist"):
     root.attrib["xmlns"] = SVG_NAMESPACE
     tree = tree.ElementTree(root)
