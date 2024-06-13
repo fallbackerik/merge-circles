@@ -33,9 +33,6 @@ namespaces = {
 #  print("...", tree.xpath(".//circle"))
 
 root = etree.parse("input/example1.svg").getroot()
-root.append( etree.Element("circle") )
-etree.SubElement(root, "circle")
-etree.SubElement(root, "circle")
 
 print("generated etree", etree.tostring(root))
 print("...", root.xpath("circle"))
